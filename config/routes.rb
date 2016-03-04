@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'users#index'
+  root to: 'pages#home'
+
+  get '/', to: 'pages#home', as: 'home'
+
   get '/users', to: 'users#index', as: 'users'
   get '/signup', to: 'users#new', as: 'signup'
   post '/users', to: 'users#create'
@@ -8,5 +11,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
+
+  get '/items', to: 'items#index'
 
 end
